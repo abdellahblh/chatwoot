@@ -886,6 +886,12 @@ const menuItems = computed(() => {
           to: accountScopedRoute('canned_list'),
         },
         {
+          name: 'Settings AI Knowledge Base',
+          label: t('KB.SIDEBAR_LABEL'),
+          icon: 'i-lucide-book-open',
+          to: accountScopedRoute('kb_products'),
+        },
+        {
           name: 'Settings Integrations',
           label: t('SIDEBAR.INTEGRATIONS'),
           icon: 'i-lucide-blocks',

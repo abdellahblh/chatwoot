@@ -28,6 +28,7 @@ import security from './security/security.routes';
 import conversationWorkflow from './conversationWorkflow/conversationWorkflow.routes';
 import captain from './captain/captain.routes';
 import data from './data/data.routes';
+import kb from './kb/kb.routes';
 
 export default {
   routes: [
@@ -57,6 +58,7 @@ export default {
     ...auditlogs.routes,
     ...billing.routes,
     ...canned.routes,
+    ...kb.routes,
     ...inbox.routes,
     ...templates.routes,
     ...integrations.routes,

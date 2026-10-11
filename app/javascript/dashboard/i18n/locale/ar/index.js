@@ -21,6 +21,7 @@ import emoji from './emoji.json';
 import general from './general.json';
 import generalSettings from './generalSettings.json';
 import helpCenter from './helpCenter.json';
+import kb from './kb.json';
 import inbox from './inbox.json';
 import inboxMgmt from './inboxMgmt.json';
 import integrationApps from './integrationApps.json';
@@ -43,6 +44,7 @@ import whatsappTemplates from './whatsappTemplates.json';
 import whatsappTemplateMgmt from './whatsappTemplateMgmt.json';
 
 export default {
+  ...kb,
   ...advancedFilters,
   ...agentBots,
   ...agentMgmt,
