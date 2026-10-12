@@ -10,7 +10,7 @@ echo "Waiting for postgres to become ready...."
 
 # Let DATABASE_URL env take presedence over individual connection params.
 # This is done to avoid printing the DATABASE_URL in the logs
-$(docker/entrypoints/helpers/pg_database_url.rb)
+eval $(ruby docker/entrypoints/helpers/pg_database_url.rb)
 PG_READY="pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USERNAME"
 
 until $PG_READY
@@ -29,6 +29,10 @@ until $BUNDLE
 do
   sleep 2;
 done
+
+# Create and migrate the database
+bundle exec rails db:create
+bundle exec rails db:migrate
 
 # Execute the main process of the container
 exec "$@"
